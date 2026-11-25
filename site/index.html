@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counsellor Copilot · who to call, when to stop, what to say</title>
+<meta name="description" content="A lead-scoring call planner for an edtech admissions team: who to call, when to stop, what to say.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='6' fill='%23E09F3E'/></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#plan"><span class="dot"></span>Counsellor Copilot</a>
+    <nav aria-label="Sections">
+      <a href="#plan">Plan</a>
+      <a href="#stop">When to stop</a>
+      <a href="#list">Who to call</a>
+      <a href="#brief">What to say</a>
+      <a href="#groups">Lead groups</a>
+      <a href="#method">How it works</a>
+    </nav>
+    <a class="gh" href="https://github.com/RuthiKode/counsellor-copilot">Code on GitHub</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO + PLANNER -->
+  <section id="plan" class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Admissions call plan, recalculated as you change your team</p>
+        <h1 id="hero-line" aria-live="polite">This batch, call the top <mark>1,000</mark> of 2,310 leads and stop there.</h1>
+        <p id="hero-sub" class="lede"></p>
+        <div class="cta">
+          <a class="btn primary" href="#list">See the call list</a>
+          <a class="btn" href="#stop">Why stop there?</a>
+        </div>
+      </div>
+
+      <form class="planner" id="planner" aria-label="Your team and prices" onsubmit="return false">
+        <h2>Your team and prices</h2>
+        <p class="hint">Assumptions, not measurements. Drag to see the plan change.</p>
+        <fieldset>
+          <legend>Calling capacity</legend>
+          <label>Counsellors <output data-for="counsellors"></output>
+            <input type="range" id="counsellors" min="1" max="30" step="1"></label>
+          <label>Calls per counsellor per day <output data-for="cpd"></output>
+            <input type="range" id="cpd" min="10" max="100" step="5"></label>
+          <label>Days to work a batch <output data-for="days"></output>
+            <input type="range" id="days" min="1" max="20" step="1"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Money</legend>
+          <label>Course price <output data-for="price"></output>
+            <input type="range" id="price" min="2000" max="50000" step="1000"></label>
+          <label>Gross margin <output data-for="margin"></output>
+            <input type="range" id="margin" min="0.1" max="0.9" step="0.05"></label>
+          <label>Cost per call <output data-for="cost"></output>
+            <input type="range" id="cost" min="10" max="500" step="10"></label>
+        </fieldset>
+        <button type="button" class="reset" id="reset">Reset to defaults</button>
+      </form>
+    </div>
+
+    <div class="wrap">
+      <dl class="figs" id="figs"></dl>
+    </div>
+  </section>
+
+  <!-- WHEN TO STOP -->
+  <section id="stop" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>When to stop</h2>
+        <p>Each line is the same 2,310 past leads, called in a different order. The shaded area is what your team can reach this batch.</p>
+      </div>
+      <div class="chart-card">
+        <div class="toggle" role="tablist" aria-label="Chart">
+          <button role="tab" aria-selected="true" data-chart="reach">Enrolments reached</button>
+          <button role="tab" aria-selected="false" data-chart="profit">Profit</button>
+        </div>
+        <div id="chart" class="chart" role="img"></div>
+        <div class="legend-row">
+          <span><i class="ln score"></i>Call in score order</span>
+          <span><i class="ln random"></i>Call in random order</span>
+          <span><i class="sq"></i>This batch</span>
+        </div>
+      </div>
+      <p class="aside" id="add-counsellor"></p>
+    </div>
+  </section>
+
+  <!-- WHO TO CALL -->
+  <section id="list">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Who to call</h2>
+        <p>Highest chance of enrolling first. Pick a lead to see its call slip.</p>
+      </div>
+      <div class="split" id="split"></div>
+      <div class="split-legend" id="split-legend"></div>
+      <div class="controls">
+        <div class="chips" role="group" aria-label="Band filter">
+          <button class="chip on" data-band="all">All</button>
+          <button class="chip" data-band="Hot">Hot</button>
+          <button class="chip" data-band="Warm">Warm</button>
+          <button class="chip" data-band="Cold">Cold</button>
+        </div>
+        <label class="check"><input type="checkbox" id="only-batch" checked> Only this batch</label>
+        <input type="search" id="search" placeholder="Find lead number" aria-label="Find lead number">
+        <button class="btn small" id="download">Download CSV</button>
+      </div>
+      <div class="table-wrap">
+        <table class="leads" id="leads">
+          <thead><tr><th>#</th><th>Lead</th><th>Score</th><th>Band</th><th>Lead group</th><th>Why this score</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="pager" id="pager"></div>
+    </div>
+  </section>
+
+  <!-- WHAT TO SAY -->
+  <section id="brief" class="band">
+    <div class="wrap brief-grid">
+      <div class="sec-head">
+        <h2>What to say</h2>
+        <p>A three-line slip for the counsellor, built only from what the lead told us and the reasons behind its score.</p>
+        <div class="stepper">
+          <button class="btn small" id="prev">Previous lead</button>
+          <button class="btn small primary" id="next">Next lead in queue</button>
+        </div>
+        <p class="fine">These slips use a fixed template. With an API key the Python app can write them with Claude, and code rejects any line that cites something not in the lead's data.</p>
+      </div>
+      <article class="slip" id="slip" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <!-- LEAD GROUPS -->
+  <section id="groups">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Five kinds of lead</h2>
+        <p>Groups found by clustering behaviour and profile. They explain who the leads are; the score still decides the order within each group.</p>
+      </div>
+      <div class="groups" id="group-list"></div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section id="method" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How it works, and why the numbers are honest</h2>
+      </div>
+      <div class="method-grid">
+        <div class="leak">
+          <h3>Leaving out what counsellors write after a call</h3>
+          <p>Nine columns, like call notes and quality ratings, only exist after a counsellor has spoken to the lead. With them in, the model looks far better than it could ever be on a new lead.</p>
+          <div id="leak-bars"></div>
+        </div>
+        <div class="recs">
+          <h3>What the results recommend</h3>
+          <div id="rec-list"></div>
+        </div>
+      </div>
+      <ul class="facts">
+        <li><b>Data.</b> 9,240 leads from one edtech company (Kaggle, X Education). Every number on this page comes from 2,310 of them the model never trained on.</li>
+        <li><b>Model.</b> Logistic regression with calibrated probabilities. LightGBM was tried and fell short of the gain needed to give up explainability.</li>
+        <li><b>Limits.</b> Past data from one company, assumed prices, and no record of what calling changes. These are projections, not measured increases.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Counsellor Copilot, a portfolio project on lead conversion.</span>
+    <a href="https://github.com/RuthiKode/counsellor-copilot">Code, notebooks and the one-page summary</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

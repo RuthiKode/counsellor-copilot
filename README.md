@@ -74,7 +74,23 @@ EV per call = P(convert) × price × margin − cost per call; call in score ord
 everyone. The model's value is in deciding **which** leads get limited counsellor time: +₹9.1 to +₹54.7 lakh
 vs random order across the grid. Full tables: [reports/sensitivity.md](reports/sensitivity.md).
 
-## 5. The app
+## 5. The website and the app
+
+### Website (no server needed)
+
+![Counsellor Copilot website](reports/figures/site_hero.png)
+
+A single-page site in [`site/`](site/) that recalculates the whole plan in the browser as you move the
+sliders. It includes the stopping point, the call list with filters and CSV download, a call slip for every lead,
+the five lead groups, and the leakage story. It runs on plain HTML, CSS and JavaScript; data comes from
+`python -m src.export_site`, using the same score order and arithmetic as the notebooks.
+
+```bash
+python -m src.export_site                       # writes site/data/site.json
+python -m http.server 8600 --directory site      # open http://localhost:8600
+```
+
+### Streamlit app
 
 | Who to call | When to stop |
 |---|---|
