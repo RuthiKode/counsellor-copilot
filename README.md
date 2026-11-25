@@ -2,6 +2,8 @@
 
 **Counsellors can't call every lead. Who to call, when to stop, what to say.**
 
+**Live site: [ruthikode.github.io/counsellor-copilot](https://ruthikode.github.io/counsellor-copilot/)**
+
 A lead-scoring and call-planning tool for an edtech admissions team, built on the Kaggle
 "Lead Scoring (X Education)" dataset (9,240 leads, 38.5% enrolled). Every number below comes from the
 notebooks in this repo, run on **2,310 held-out test leads** the model never saw.
