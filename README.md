@@ -79,14 +79,15 @@ vs random order across the grid. Full tables: [reports/sensitivity.md](reports/s
 | Who to call | When to stop |
 |---|---|
 | ![Who to call](reports/figures/app_who_to_call.png) | ![When to stop](reports/figures/app_when_to_stop.png) |
-| **What to say** | **Personas** |
-| ![What to say](reports/figures/app_what_to_say.png) | ![Personas](reports/figures/app_personas.png) |
+| **What to say** | **Who they are** |
+| ![What to say](reports/figures/app_what_to_say.png) | ![Who they are](reports/figures/app_personas.png) |
 
-- **Sidebar:** counsellors, calls per day, days per batch, price, margin and cost per call. Every number is labelled with these assumptions.
-- **Who to call:** ranked call list (score, Hot/Warm/Cold band, persona, top-3 drivers) with Do Not Call leads excluded. You can upload new leads as CSV and download the list.
-- **When to stop:** live gains and profit curves, enrolments captured, calls per enrolment and projected profit, with the cutoff marked.
-- **What to say:** a 3-line call brief. AI-written when `ANTHROPIC_API_KEY` is set; otherwise a deterministic template, labelled as such.
-- **Personas:** 5 lead groups with conversion rate, volume share and a playbook.
+- **Header:** the week's plan in one sentence (how many leads to call, where to stop, what share of enrolments that reaches), with enrolments, calls per enrolment, projected profit and break-even underneath.
+- **Sidebar:** your team (counsellors, calls per day, days per batch) and prices (course price, margin, cost per call). They are assumptions; every number recalculates. You can also upload new leads as CSV to score them.
+- **Who to call:** a bar showing how the batch splits into Hot / Warm / Cold, then the ranked call list (score, band, lead group, top-3 reasons) with Do Not Call leads left out, and a download button.
+- **When to stop:** enrolments reached and profit as you work down the list, with the stopping point marked and what one more counsellor would add.
+- **What to say:** a call slip (why, likely objection, opening line). AI-written when `ANTHROPIC_API_KEY` is set; otherwise a deterministic template, labelled as such.
+- **Who they are:** 5 lead groups compared on one table, with enrol rate against the average and a playbook for each.
 
 ### How to run
 
