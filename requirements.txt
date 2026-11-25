@@ -1,0 +1,19 @@
+# Python 3.11. Versions pinned for reproducibility.
+pandas==2.2.3
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.6.1
+lightgbm==4.6.0
+shap==0.47.2
+optuna==4.3.0
+kmodes==0.12.2
+matplotlib==3.10.3
+plotly==6.1.2
+streamlit==1.45.1
+anthropic==2.14.0
+pyyaml==6.0.2
+openpyxl==3.1.5
+pytest==8.3.5
+nbconvert==7.16.6
+nbformat==5.10.4
+ipykernel==6.29.5

@@ -1,0 +1,37 @@
+column,when_known,decision,reason
+Prospect ID,id,dropped,"Identifier, no predictive meaning"
+Lead Number,id,dropped,"Identifier, no predictive meaning"
+Lead Origin,creation,kept (one-hot),"How the lead entered the system (form, API, import). 3 levels kept, rest → Other; blanks → 'Missing' level"
+Lead Source,creation,kept (one-hot),"Traffic source that produced the lead. 7 levels kept, rest → Other; blanks → 'Missing' level"
+Do Not Email,unclear,kept (Yes/No → 1/0),Opt-out flag; could be set after the lead starts receiving emails
+Do Not Call,unclear,dropped,"Opt-out flag; could be set after a call. Kept for training, excluded from call lists. near-constant (100.0% one value)"
+TotalVisits,unclear,kept (numeric),Web activity measured at extraction; may include visits after first contact. capped at 99th pct = 16; median-imputed + is_missing flag
+Total Time Spent on Website,unclear,kept (numeric),Web activity measured at extraction; may include visits after first contact. capped at 99th pct = 1834.42
+Page Views Per Visit,unclear,kept (numeric),Web activity measured at extraction; may include visits after first contact. capped at 99th pct = 9; median-imputed + is_missing flag
+Last Activity,post-contact,dropped,"Latest logged activity, includes counsellor actions (e.g. 'SMS Sent', 'Had a Phone Conversation')"
+Country,creation,kept (one-hot),"Most likely IP / form geography at sign-up. 2 levels kept, rest → Other; blanks → 'Missing' level"
+Specialization,creation,kept (one-hot),"Sign-up form field. 16 levels kept, rest → Other; blanks → 'Missing' level"
+How did you hear about X Education,creation,dropped,"Sign-up form field. 78% missing, missingness not predictive"
+What is your current occupation,unclear,kept (one-hot),"Form field, but blank together with 'What matters most' for 99% of blanks: may be a later form step or counsellor-filled. 4 levels kept, rest → Other; blanks → 'Missing' level"
+What matters most to you in choosing a course,unclear,kept (one-hot),"Form field, but blank together with occupation for 99% of blanks: may be a later form step or counsellor-filled. 2 levels kept, rest → Other; blanks → 'Missing' level"
+Search,creation,dropped,Ad channel the lead saw. near-constant (99.9% one value)
+Magazine,creation,dropped,Ad channel the lead saw. near-constant (100.0% one value)
+Newspaper Article,creation,dropped,Ad channel the lead saw. near-constant (100.0% one value)
+X Education Forums,creation,dropped,Ad channel the lead saw. near-constant (100.0% one value)
+Newspaper,creation,dropped,Ad channel the lead saw. near-constant (100.0% one value)
+Digital Advertisement,creation,dropped,Ad channel the lead saw. near-constant (99.9% one value)
+Through Recommendations,creation,dropped,Ad channel the lead saw. near-constant (99.9% one value)
+Receive More Updates About Our Courses,creation,dropped,Sign-up form checkbox. near-constant (100.0% one value)
+Tags,post-contact,dropped,Counsellor notes on call outcome (e.g. 'Will revert after reading the email')
+Lead Quality,post-contact,dropped,Counsellor's judgement of the lead after contact
+Update me on Supply Chain Content,creation,dropped,Sign-up form checkbox. near-constant (100.0% one value)
+Get updates on DM Content,creation,dropped,Sign-up form checkbox. near-constant (100.0% one value)
+Lead Profile,post-contact,dropped,Profile assigned by the sales team
+City,creation,kept (one-hot),"Sign-up form field. 6 levels kept, rest → Other; blanks → 'Missing' level"
+Asymmetrique Activity Index,post-contact,dropped,Company-computed score from activity/profile; assigned later
+Asymmetrique Profile Index,post-contact,dropped,Company-computed score from activity/profile; assigned later
+Asymmetrique Activity Score,post-contact,dropped,Company-computed score from activity/profile; assigned later
+Asymmetrique Profile Score,post-contact,dropped,Company-computed score from activity/profile; assigned later
+I agree to pay the amount through cheque,creation,dropped,Sign-up form checkbox. near-constant (100.0% one value)
+A free copy of Mastering The Interview,creation,kept (Yes/No → 1/0),Sign-up form checkbox
+Last Notable Activity,post-contact,dropped,"Latest notable activity, includes counsellor actions"

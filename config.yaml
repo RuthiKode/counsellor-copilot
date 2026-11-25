@@ -1,0 +1,40 @@
+# Counsellor Copilot — all business assumptions live here.
+# Every value below is an ASSUMPTION, not a measured fact. Change them freely;
+# every downstream output labels itself with the values it used.
+
+data:
+  path: data/Leads.csv
+  target: Converted
+  id_col: Prospect ID
+
+model:
+  random_state: 42
+  test_size: 0.25
+  cv_folds: 5
+  lgbm_trials: 20
+  # Keep LightGBM only if its top-20% precision (out-of-fold, training data)
+  # beats logistic regression by at least this many percentage points
+  # (= extra enrolments per 100 calls in the top 2 deciles).
+  min_gain_pp_top20: 2.0
+  bands:            # score-percentile bands (share of leads, from the top)
+    hot: 0.20       # top 2 deciles
+    warm: 0.30      # next 3 deciles; the rest are Cold
+
+economics:
+  currency: "₹"
+  course_price: 15000        # ASSUMPTION: list price of the course (INR)
+  gross_margin: 0.60         # ASSUMPTION: share of price kept after delivery costs
+  cost_per_call: 150         # ASSUMPTION: fully loaded counsellor cost per call (INR)
+  sensitivity:
+    course_price: [5000, 15000, 30000]
+    cost_per_call: [50, 150, 300]
+
+capacity:
+  counsellors: 5             # ASSUMPTION
+  calls_per_counsellor_per_day: 40   # ASSUMPTION
+  days_to_work_batch: 5      # ASSUMPTION: a batch of new leads must be called within one working week
+
+briefs:
+  model_name: claude-haiku-5-5
+  cache_dir: reports/brief_cache
+  max_tokens: 1024           # includes the model's (low-effort) thinking; the brief itself is ~3 short lines

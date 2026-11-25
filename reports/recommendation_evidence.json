@@ -1,0 +1,28 @@
+{
+  "r1": {
+    "capacity": 1000,
+    "leads": 2310,
+    "model_capture": 0.7741573033707865,
+    "random_capture": 0.4329004329004329,
+    "extra_enrol": 303.71861471861473,
+    "extra_profit": 2733467.5324675324,
+    "per_100": 13.14799197916081
+  },
+  "r2": {
+    "laf_rate": 0.924791086350975,
+    "laf_share": 0.07770562770562771,
+    "olark_rate": 0.2552706552706553,
+    "olark_share": 0.18993506493506493,
+    "ref_rate": 0.9176029962546817
+  },
+  "r3": {
+    "extra_calls": 200,
+    "block_rate": 0.35,
+    "block_enrol": 70.0,
+    "block_profit": 600000.0,
+    "break_even": 0.016666666666666666,
+    "rank_from": 1001,
+    "rank_to": 1200,
+    "rejected_persona_skip_delta": -17.0
+  }
+}

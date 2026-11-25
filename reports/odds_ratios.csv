@@ -1,0 +1,55 @@
+feature,label,binary,sd,odds_ratio,unit
+Lead Source=Welingak Website,Lead source: Welingak Website,True,0.12609686088345243,14.009343999253446,yes vs no
+Lead Origin=Lead Add Form,Lead origin: Lead Add Form,True,0.2698580914728077,9.89258361124998,yes vs no
+What is your current occupation=Working Professional,Occupation: Working Professional,True,0.26622246443786496,7.049340276330896,yes vs no
+Lead Origin=Other,Lead origin: other / rare,True,0.08120188520499834,0.1970677761438222,yes vs no
+Do Not Email,Opted out of email,True,0.2734258900673452,0.25331552372749583,yes vs no
+Total Time Spent on Website,Time on website,False,543.4316076520581,3.1752076400562697,per 1 SD
+What matters most to you in choosing a course=Better Career Prospects,Main motivation: Better Career Prospects,True,0.453313362554529,3.165803468687677,yes vs no
+What matters most to you in choosing a course=Missing,Main motivation left blank,True,0.4531789395098883,0.31614729314991624,yes vs no
+What matters most to you in choosing a course=Other,Main motivation: other / rare,True,0.01698578813225069,0.33328688444589216,yes vs no
+What is your current occupation=Student,Occupation: Student,True,0.1510965150363531,0.340316521072819,yes vs no
+TotalVisits__is_missing,Website visits not recorded,True,0.12442396565871454,0.3481219007420138,yes vs no
+Page Views Per Visit__is_missing,Pages per visit not recorded,True,0.12442396565871454,0.3481219007420138,yes vs no
+Country=Other,Country: other / rare,True,0.17062697326430806,0.43259009663316206,yes vs no
+Lead Origin=Landing Page Submission,Lead origin: Landing Page Submission,True,0.49933982307378455,0.45257552171233284,yes vs no
+Country=Missing,Country left blank,True,0.4431259842517469,2.1493937410841912,yes vs no
+What is your current occupation=Unemployed,Occupation: Unemployed,True,0.48782466698786714,0.4911646117382482,yes vs no
+Specialization=Hospitality Management,Specialization: Hospitality Management,True,0.11445248519700055,0.5052933941719114,yes vs no
+Country=India,Country: India,True,0.4575615366688401,0.5481862711284887,yes vs no
+Lead Source=Referral Sites,Lead source: Referral Sites,True,0.11807385209052493,0.5845957063011523,yes vs no
+Lead Source=Other,Lead source: other / rare,True,0.10942709142586537,1.6804545804285724,yes vs no
+Specialization=Missing,Specialization left blank,True,0.48221232863546454,0.5972428833162394,yes vs no
+City=Other Metro Cities,City: Other Metro Cities,True,0.19487166841913253,1.6637017152089357,yes vs no
+Specialization=Healthcare Management,Specialization: Healthcare Management,True,0.12829118735517667,1.5618475954717226,yes vs no
+City=Missing,City left blank,True,0.48948123394033927,0.6693591190875957,yes vs no
+City=Other,City: other / rare,True,0.08952937295418317,1.4782002933063032,yes vs no
+"Specialization=Banking, Investment And Insurance","Specialization: Banking, Investment And Insurance",True,0.18467177069476992,1.4318726686515564,yes vs no
+Specialization=E-COMMERCE,Specialization: E-COMMERCE,True,0.11070595722799055,1.4307278240693413,yes vs no
+Specialization=Business Administration,Specialization: Business Administration,True,0.20155501997958655,1.4148215252291139,yes vs no
+City=Other Cities of Maharashtra,City: Other Cities of Maharashtra,True,0.21987104423319104,1.4001205446212162,yes vs no
+Specialization=Operations Management,Specialization: Operations Management,True,0.22765605914297715,1.3611128408427202,yes vs no
+Specialization=Finance Management,Specialization: Finance Management,True,0.3099352119829807,1.358344642981433,yes vs no
+City=Other Cities,City: Other Cities,True,0.2627499589767862,1.3412340770378137,yes vs no
+Specialization=Retail Management,Specialization: Retail Management,True,0.10482201257840673,0.7565280431579314,yes vs no
+What is your current occupation=Missing,Occupation left blank,True,0.45229972735225266,1.3143611477325416,yes vs no
+Specialization=Marketing Management,Specialization: Marketing Management,True,0.2833284736802281,1.2726282766434966,yes vs no
+A free copy of Mastering The Interview,Asked for free interview e-book,True,0.4626531099558245,0.7909265262691174,yes vs no
+Specialization=International Business,Specialization: International Business,True,0.1382064717778751,1.256326664480394,yes vs no
+Lead Source=Olark Chat,Lead source: Olark Chat,True,0.391649545851888,0.8009523000205965,yes vs no
+Specialization=Human Resource Management,Specialization: Human Resource Management,True,0.2870686630410783,1.2092203926004388,yes vs no
+Lead Source=Reference,Lead source: Reference,True,0.23538958551027384,1.1967327757602197,yes vs no
+Lead Origin=API,Lead origin: API,True,0.4874321535353008,1.1908094970041223,yes vs no
+City=Thane & Outskirts,City: Thane & Outskirts,True,0.2712038197000737,1.187709701302062,yes vs no
+Specialization=Supply Chain Management,Specialization: Supply Chain Management,True,0.19107763935003488,1.1838001668772389,yes vs no
+TotalVisits,Website visits,False,3.1484090038546215,1.1784671324922777,per 1 SD
+What is your current occupation=Other,Occupation: other / rare,True,0.0575142434503236,0.8512834350727276,yes vs no
+Lead Source=Direct Traffic,Lead source: Direct Traffic,True,0.4462411911619569,0.8629010408594316,yes vs no
+Specialization=Other,Specialization: other / rare,True,0.13567283432661653,0.8930432410335414,yes vs no
+City=Mumbai,City: Mumbai,True,0.47662789826857566,1.1139992524874578,yes vs no
+Page Views Per Visit,Pages per visit,False,1.9793026402964033,0.900847437027103,per 1 SD
+Specialization=Media and Advertising,Specialization: Media and Advertising,True,0.1464668500463326,1.1032049051156174,yes vs no
+Specialization=IT Projects Management,Specialization: IT Projects Management,True,0.1903782707772758,1.0825797131894193,yes vs no
+Lead Source=Organic Search,Lead source: Organic Search,True,0.32936412315791586,1.074858002359078,yes vs no
+Lead Source=Google,Lead source: Google,True,0.4630069980244748,1.023226671850349,yes vs no
+Specialization=Travel and Tourism,Specialization: Travel and Tourism,True,0.15290532453715655,0.9985299790163811,yes vs no

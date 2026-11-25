@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Counsellor Copilot: business summary</title>
+<style>
+@page { size: A4; margin: 11mm 12mm; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #1f2933; line-height: 1.32; margin: 0; }
+h1 { font-size: 15pt; margin: 0 0 2px; }
+.sub { color: #52606d; margin: 0 0 8px; font-size: 9pt; }
+h2 { font-size: 10pt; margin: 9px 0 4px; color: #d64545; text-transform: uppercase; letter-spacing: .04em; }
+.headline { background: #fdf0f0; border-left: 4px solid #d64545; padding: 7px 10px; font-size: 10pt; }
+.headline b { font-size: 11pt; }
+.row { display: flex; gap: 12px; align-items: flex-start; }
+.row img { width: 44%; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border-bottom: 1px solid #e4e7eb; padding: 3px 5px; text-align: left; vertical-align: top; }
+th { background: #f5f7fa; font-weight: 600; }
+td.n { font-weight: 700; color: #d64545; }
+.foot { color: #616e7c; font-size: 7.4pt; margin-top: 8px; border-top: 1px solid #e4e7eb; padding-top: 4px; }
+</style></head><body>
+<h1>Counsellor Copilot</h1>
+<p class="sub">Who to call, when to stop, what to say: a lead-scoring plan for the admissions team</p>
+<h2>Situation</h2>
+<p>Counsellors can't call every lead. In the historical data <b>38.5%</b> of leads enrolled.
+At the assumed capacity a team can call <b>1,000</b> of every <b>2,310</b> new leads in a week
+(43%), so the order of calls decides how many enrolments it reaches.</p>
+<div class="headline"><b>Calling leads in score order, the top 20% of leads would capture 43%
+of enrolments at 2.1&times; the baseline rate.</b><br>
+With 1,000 calls, score order reaches <b>77%</b> of enrolments vs
+<b>43%</b> in random order: about <b>304 more enrolments</b>
+(&#8377;27.3 lakh at the assumed prices). Tested on 2,310 past leads the model never saw.</div>
+<h2>How fast enrolments come in &amp; who the leads are</h2>
+<div class="row"><img src="figures/03_gains.png" alt="Gains chart">
+<table><tr><th>Lead group</th><th>Share of leads</th><th>Enrol rate</th><th>Share of enrolments</th><th>Playbook</th></tr><tr><td>Form-fill referrals</td><td>7%</td><td>90%</td><td>17%</td><td>Call first: these sit at the top of every day&#x27;s queue</td></tr><tr><td>Engaged working professionals</td><td>5%</td><td>87%</td><td>12%</td><td>Call first: these sit at the top of every day&#x27;s queue</td></tr><tr><td>Website browsers</td><td>63%</td><td>35%</td><td>58%</td><td>Call in score order (Hot, then Warm)</td></tr><tr><td>Chat-only drop-ins</td><td>18%</td><td>25%</td><td>12%</td><td>Call Hot/Warm in score order; put Cold into chat/WhatsApp follow-up</td></tr><tr><td>Email opt-outs</td><td>6%</td><td>10%</td><td>1%</td><td>Deprioritise: call only if Hot/Warm; otherwise low-cost nurture (no email)</td></tr></table></div>
+<h2>Three recommendations</h2>
+<table><tr><th>#</th><th>Action</th><th>Owner</th><th>Evidence</th><th>Expected effect</th></tr><tr><td class='n'>1</td><td><b>Work every day&#x27;s call list in lead-score order and stop at capacity (200 calls/day assumed); never call in arrival or random order.</b></td><td>Sales ops (queue) + counsellors</td><td>With 1,000 calls for 2,310 test leads, score order reaches 77% of enrolments vs 43% at random.</td><td>Would add ~304 enrolments per 2,310 leads (~13 per 100 leads) with the same headcount; ₹27.3 lakh at assumed prices.</td></tr><tr><td class='n'>2</td><td><b>Shift acquisition budget toward form-fill channels (Lead Add Form: Reference, Welingak) and test fixes for Olark Chat (qualifying questions in chat) before scaling it.</b></td><td>Marketing</td><td>Lead Add Form leads convert at 92% but are 8% of volume; Olark Chat is 19% of volume at 26%.</td><td>More high-intent leads per rupee of spend, if quality holds at higher volume (retrospective data: validate with a small budget-shift test).</td></tr><tr><td class='n'>3</td><td><b>Treat counsellor capacity, not call cost, as the lever: before cutting calls, price one more counsellor (or a longer calling window) against the leads just below today&#x27;s cutoff.</b></td><td>Sales ops / sales management</td><td>A call breaks even at 1.7% conversion (assumed prices); the next 200 leads below the 1,000-call cutoff (ranks 1,001–1,200) still convert at 35%.</td><td>One extra counsellor (200 calls per batch) would reach ~70 more enrolments, ₹6.0 lakh before that counsellor&#x27;s salary (assumed prices).</td></tr></table>
+<p class="foot">Assumptions (not measured): course price ₹15,000, gross margin 60%, ₹150 per call, 5 counsellors × 40 calls/day, 5 days to work a batch. Retrospective simulation on one company's past leads (Kaggle
+&ldquo;Lead Scoring, X Education&rdquo;): projections, not measured uplift. Call briefs are aids for counsellors, not facts.</p>
+</body></html>

@@ -1,0 +1,35 @@
+{
+  "model": "Logistic regression",
+  "calibration": "isotonic",
+  "class_weight": "None",
+  "decision": "LightGBM's top-20% precision is +1.8 pp vs logistic regression; the bar set in config before comparing was +2.0 pp. Not enough to justify a less explainable model \u2192 keep logistic regression.",
+  "ab_table": {
+    "precision@20% (OOF)": {
+      "A: logistic": 0.8716,
+      "B: LightGBM": 0.8896
+    },
+    "lift@20% (OOF)": {
+      "A: logistic": 2.2613,
+      "B: LightGBM": 2.3081
+    },
+    "PR-AUC (OOF)": {
+      "A: logistic": 0.8215,
+      "B: LightGBM": 0.836
+    }
+  },
+  "band_cutoffs": {
+    "hot": 74.0,
+    "warm": 29.9
+  },
+  "headline": "Top 20% of leads capture 43% of conversions at 2.1\u00d7 baseline",
+  "headline_numbers": {
+    "k": 0.2,
+    "recall": 0.4258426966292135,
+    "lift": 2.1292134831460676,
+    "precision": 0.8203463203463204,
+    "calls_per_enrolment_model": 1.2189973614775724,
+    "calls_per_enrolment_random": 2.595505617977528
+  },
+  "test_leads": 2310,
+  "test_baseline": 0.3852813852813853
+}

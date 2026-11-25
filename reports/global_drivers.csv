@@ -1,0 +1,11 @@
+feature,label,importance,direction
+Total Time Spent on Website,Time on website,0.9962530700830321,raises
+What matters most to you in choosing a course=Better Career Prospects,Main motivation: Better Career Prospects,0.49165369362091726,raises
+What matters most to you in choosing a course=Missing,Main motivation left blank,0.49109743167648334,lowers
+Lead Origin=Landing Page Submission,Lead origin: Landing Page Submission,0.39386335345915346,lowers
+Lead Origin=Lead Add Form,Lead origin: Lead Add Form,0.35628829157425074,raises
+What is your current occupation=Unemployed,Occupation: Unemployed,0.3403204877083167,lowers
+Country=Missing,Country left blank,0.30184758786556476,raises
+Country=India,Country: India,0.2535978638218667,lowers
+What is your current occupation=Working Professional,Occupation: Working Professional,0.23667531477221918,raises
+Specialization=Missing,Specialization left blank,0.23660577585666437,lowers

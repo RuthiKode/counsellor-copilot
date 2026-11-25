@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+data/Leads.csv
+data/*.zip
+.env
+.streamlit/secrets.toml
+reports/brief_cache/
+models/scored_leads.csv
+.claude/
